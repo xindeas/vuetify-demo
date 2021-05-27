@@ -59,7 +59,7 @@
             <v-menu offset-y>
                 <template v-slot:activator="{ on, attrs }">
                     <v-icon
-                            class="cursor-pointer mr-2"
+                            class="cursor-pointer"
                             v-bind="attrs"
                             v-on="on">mdi-translate
                     </v-icon>
