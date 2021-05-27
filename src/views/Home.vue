@@ -110,8 +110,8 @@
         <v-row
                 align="center"
                 justify="center"
-                class="card">
-            <v-col cols="3">
+                class="route-card mt-1 mb-1">
+            <v-col sm="12" md="6" lg="3">
                 <v-hover>
                     <template v-slot:default="{ hover }">
                         <v-card
@@ -153,7 +153,7 @@
                     </template>
                 </v-hover>
             </v-col>
-            <v-col cols="3">
+            <v-col sm="12" md="6" lg="3">
                 <v-hover>
                     <template v-slot:default="{ hover }">
                         <v-card
@@ -195,7 +195,7 @@
                     </template>
                 </v-hover>
             </v-col>
-            <v-col cols="3">
+            <v-col sm="12" md="6" lg="3">
                 <v-hover>
                     <template v-slot:default="{ hover }">
                         <v-card
@@ -237,7 +237,7 @@
                     </template>
                 </v-hover>
             </v-col>
-            <v-col cols="3">
+            <v-col sm="12" md="6" lg="3">
                 <v-hover>
                     <template v-slot:default="{ hover }">
                         <v-card
@@ -362,12 +362,10 @@
     }
 </script>
 <style scoped>
-    .v-sheet--offset {
-        top: -24px;
-        position: relative;
-    }
-
     .card {
         height: 500px;
+    }
+    .route-card {
+        min-height: 500px;
     }
 </style>

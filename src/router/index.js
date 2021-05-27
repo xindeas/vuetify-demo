@@ -46,6 +46,10 @@ const routes = [
         },
         component: () => import('../views/About.vue')
     },
+    {
+        path: '*',
+        redirect: '/',
+    },
 ]
 
 const router = new VueRouter({
