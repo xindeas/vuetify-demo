@@ -22,3 +22,22 @@ export const valid = {
     required: 'required',
     pattern: 'incorrect format',
 }
+export const modules = {
+    setting: {
+        title: 'Basic Settings',
+        sex: 'sex',
+        sexs: {
+            male: 'male',
+            female: 'female',
+        },
+        name: 'name',
+        email: 'E-mail',
+        isAgree: 'Do you agree?',
+        hobby: 'hobby',
+        hobbys: {
+            football: 'Foot Ball',
+            tennis: 'Tennis',
+            tableTennis: 'Table Tennis',
+        }
+    }
+}

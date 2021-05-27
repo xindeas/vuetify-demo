@@ -22,3 +22,22 @@ export const valid = {
     required: '必填项',
     pattern: '格式不正确',
 }
+export const modules = {
+    setting: {
+        title: '基础设置',
+        sex: '性别',
+        sexs: {
+            male: '男',
+            female: '女',
+        },
+        name: '姓名',
+        email: '邮箱',
+        isAgree: '是否同意？',
+        hobby: '爱好',
+        hobbys: {
+            football: '足球',
+            tennis: '网球',
+            tableTennis: '乒乓球',
+        }
+    }
+}

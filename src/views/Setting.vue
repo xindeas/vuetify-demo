@@ -7,25 +7,26 @@
                 lazy-validation
         >
             <v-card class="pa-6 mb-5" flat >
-                <v-card-title>Basic Settings</v-card-title>
+                <v-card-title>{{i18n('modules.setting.title')}}</v-card-title>
                 <v-radio-group
-                        label="size"
-                        v-model="form.size"
+                        :rules="rules.sex"
+                        :label="i18n('modules.setting.sex')"
+                        v-model="form.sex"
                 >
                     <v-radio
-                            label="small"
-                            value="small"
+                            :label="i18n('modules.setting.sexs.male')"
+                            value="male"
                     ></v-radio>
                     <v-radio
-                            label="medium"
-                            value="medium"
+                            :label="i18n('modules.setting.sexs.female')"
+                            value="female"
                     ></v-radio>
                 </v-radio-group>
                 <v-text-field
                         v-model="form.name"
                         :counter="10"
                         :rules="rules.name"
-                        label="Name"
+                        :label="i18n('modules.setting.name')"
                         required
                 >
                 </v-text-field>
@@ -33,22 +34,22 @@
                 <v-text-field
                         v-model="form.email"
                         :rules="rules.email"
-                        label="E-mail"
+                        :label="i18n('modules.setting.email')"
                         required
                 ></v-text-field>
 
                 <v-select
-                        v-model="form.select"
-                        :items="items"
-                        :rules="rules.select"
-                        label="Item"
+                        v-model="form.hobby"
+                        :items="hobbys"
+                        :rules="rules.hobby"
+                        :label="i18n('modules.setting.hobby')"
                         required
                 ></v-select>
 
                 <v-checkbox
-                        v-model="form.checkbox"
-                        :rules="rules.checkbox"
-                        label="Do you agree?"
+                        v-model="form.isAgree"
+                        :rules="rules.isAgree"
+                        :label="i18n('modules.setting.isAgree')"
                         required
                 ></v-checkbox>
             </v-card>
@@ -81,16 +82,10 @@
             form: {
                 name: '',
                 email: '',
-                select: null,
-                checkbox: false,
-                size: 'small'
+                hobby: null,
+                isAgree: false,
+                sex: ''
             },
-            items: [
-                'Item 1',
-                'Item 2',
-                'Item 3',
-                'Item 4',
-            ],
         }),
         computed: {
             rules() {
@@ -103,10 +98,18 @@
                         v => !!v || this.i18n('valid.required'),
                         v => /.+@.+\..+/.test(v) || this.i18n('valid.pattern'),
                     ],
-                    select: [v => !!v || this.i18n('valid.required')],
-                    checkbox: [v => !!v || this.i18n('valid.required')]
+                    hobby: [v => !!v || this.i18n('valid.required')],
+                    sex: [v => !!v || this.i18n('valid.required')],
+                    isAgree: [v => !!v || this.i18n('valid.required')]
                 }
             },
+            hobbys() {
+                return [
+                    this.i18n('modules.setting.hobbys.football'),
+                    this.i18n('modules.setting.hobbys.tennis'),
+                    this.i18n('modules.setting.hobbys.tableTennis'),
+                ];
+            }
         },
 
         methods: {
